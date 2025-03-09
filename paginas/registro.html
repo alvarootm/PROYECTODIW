@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registro de Equipos - Liga de Fútbol</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="IMG/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/main.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success py-4">
+        <div class="container">
+            <a class="navbar-brand" href="#" onclick="openSidebar()">Liga de Fútbol</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="equipos.html">Equipos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="registro.html">Registro de Jugadores</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--Menu Lateral-->
+    <div id="sidebar" class="sidebar">
+        <span class="close-btn" onclick="closeSidebar()">×</span>
+        <a href="#Registro">Registrarse</a>
+        <a href="#patrocinadores">Patrocinadores</a>
+    </div>
+
+    <div class="container mt-4">
+        <img src="IMG/logo.png" alt="Logo de la Liga" class="img-fluid mx-auto d-block" style="max-width: 200px;">
+    
+    </div>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Registro de Equipos y Jugadores</h2>
+        
+        <div class="row">
+            <!-- Crear Nuevo Equipo -->
+            <div class="col-md-6">
+                <div class="card shadow-lg border-success">
+                    <div class="card-header bg-success text-white text-center" id="Registro">
+                        <h4>Crear Nuevo Equipo</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="nuevoEquipoForm" class="needs-validation" novalidate>
+                            <div class="mb-3">
+                                <label for="nombreEquipo" class="form-label">Nombre del Equipo :</label>
+                                <input type="text" class="form-control" id="nombreEquipo" required>
+                                <div class="invalid-feedback">Por favor, ingresa un nombre válido.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="ciudad" class="form-label">Aula a la que pertenecen :</label>
+                                <input type="text" class="form-control" id="ciudad" required>
+                                <div class="invalid-feedback">Por favor, este campo es obligatorio.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="entrenador" class="form-label">Capitan :</label>
+                                <input type="text" class="form-control" id="entrenador" required>
+                                <div class="invalid-feedback">Por favor, ingresa el nombre del Capitan.</div>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">Registrar Equipo</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Añadir Jugador a Equipo Existente -->
+            <div class="col-md-6">
+                <div class="card shadow-lg border-success">
+                    <div class="card-header bg-success text-white text-center">
+                        <h4>Añadir Jugador a un Equipo</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="registroJugadorForm" class="needs-validation" novalidate>
+                            <div class="mb-3">
+                                <label for="equipoExistente" class="form-label">Selecciona un Equipo :</label>
+                                <select class="form-select" id="equipoExistente" required>
+                                    <option value="">Selecciona un equipo...</option>
+                                    <option value="Equipo A">Equipo 1</option>
+                                    <option value="Equipo B">Equipo 2</option>
+                                    <option value="Equipo C">Equipo 3</option>
+                                </select>
+                                <div class="invalid-feedback">Por favor, selecciona un equipo.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="nombreJugador" class="form-label">Nombre del Jugador</label>
+                                <input type="text" class="form-control" id="nombreJugador" required>
+                                <div class="invalid-feedback">Por favor, ingresa un nombre válido.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="posicion" class="form-label">Posición</label>
+                                <select class="form-select" id="posicion" required>
+                                    <option value="">Selecciona una opción...</option>
+                                    <option value="Portero">Portero</option>
+                                    <option value="Defensa">Defensa</option>
+                                    <option value="Centrocampista">Centrocampista</option>
+                                    <option value="Delantero">Delantero</option>
+                                </select>
+                                <div class="invalid-feedback">Por favor, selecciona una posición.</div>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">Añadir Jugador</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container" id="patrocinadores">
+            <h4 class="fw-bold">¡Agradecimiento especial a nuestros patrocinadores!</h4>
+            <p class="mb-4">Agradecemos el apoyo de las siguientes marcas locales que hacen posible esta liga.</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-6 col-md-3 mb-3">
+                    <img src="IMG/COLABORAN DIEGO 1.jpg" class="img-fluid rounded" alt="Patrocinador 1">
+                    <p class="mt-2">Pastelería Diego Vázquez</p>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <img src="IMG/juntaAndaluza.png" class="img-fluid rounded" alt="Patrocinador 2">
+                    <p class="mt-2">Junta Andalucía</p>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <img src="IMG/ORGANIZAN AYTO 1.jpeg" class="img-fluid rounded" alt="Patrocinador 3">
+                    <p class="mt-2">Ayuntamiento de Utrera</p>
+                </div>
+            </div>
+
+            <p class="mt-4">© 2025 Liga de Fútbol | Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            'use strict';
+            var forms = document.querySelectorAll('.needs-validation');
+            Array.prototype.slice.call(forms).forEach(function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+    </script>
+    <script>
+        function openSidebar() {
+            document.getElementById("sidebar").style.left = "0";
+        }
+
+        function closeSidebar() {
+            document.getElementById("sidebar").style.left = "-250px";
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

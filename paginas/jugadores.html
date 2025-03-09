@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Equipos - Liga de Fútbol</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="IMG/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/style.css">
+    
+</head>
+<style>
+    .search-barJugadores {
+    margin-bottom: 20px;
+}
+.player-cardJugadores {
+    margin-bottom: 20px;
+}
+.sidebarJugadores {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: #1b7d38e3;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 1000;
+}
+.sidebarJugadores a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+.sidebarJugadores a:hover {
+    background-color: #155724;
+}
+.close-btnJugadores {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+/* Barra de desplazamiento individual para cada equipo */
+.team-scrollable-containerJugadores {
+    max-height: 400px; /* Altura fija para el contenedor */
+    overflow-y: auto; /* Habilitar barra de desplazamiento vertical */
+    padding-right: 10px; /* Espacio para la barra de desplazamiento */
+}
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success py-4">
+        <div class="container">
+            <a class="navbar-brand" href="#" onclick="openSidebarJugadores()">Liga de Fútbol</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="equipos.html">Equipos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="registro.html">Registro de Jugadores</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menú Lateral -->
+    <div id="sidebarJugadores" class="sidebarJugadores">
+        <span class="close-btnJugadores" onclick="closeSidebarJugadores()">×</span>
+        <a href="#equipos">Equipos</a>
+        <a href="#patrocinadores">Patrocinadores</a>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="container mt-4">
+        <img src="IMG/logo.png" alt="Logo de la Liga" class="img-fluid mx-auto d-block" style="max-width: 200px;">
+        
+        <!-- Menú de navegación y búsqueda -->
+        <div class="search-barJugadores">
+            <input type="text" id="searchInputJugadores" class="form-control" placeholder="Buscar por nombre de equipo..." oninput="filterTeamsJugadores()">
+        </div>
+
+        <!-- Equipos -->
+        <div class="row" id="teamsContainerJugadores">
+            <!-- Equipo 1 -->
+            <div class="col-md-4 team-cardJugadores ">
+                <div class="card border-success">
+                    <div class="card-body">
+                        <h5 class="card-title text-success">Los Pequeños Guerreros</h5>
+                        <div class="team-scrollable-containerJugadores"> <!-- Contenedor con barra de desplazamiento -->
+                            <div class="row">
+                                <!-- Jugador 1 -->
+                                <div class="col-12 player-cardJugadores w-75">
+                                    <div class="card border-success">
+                                        <img src="IMG/niños/niño1.jpg" class="card-img-top w-100 " alt="Jugador 1">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-success">Juan Pérez</h6>
+                                            <p class="card-text">Edad: 10 años<br>Curso: 4º Primaria<br>Posición: Delantero</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Jugador 2 -->
+                                <div class="col-12 player-cardJugadores w-75">
+                                    <div class="card border-success">
+                                        <img src="IMG/niños/niño2.jpg" class="card-img-top" alt="Jugador 2">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-success">Carlos Gómez</h6>
+                                            <p class="card-text">Edad: 9 años<br>Curso: 3º Primaria<br>Posición: Mediocampista</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Jugador 3 -->
+                                <div class="col-12 player-cardJugadores w-75">
+                                    <div class="card border-success">
+                                        <img src="IMG/niños/niño3.webp" class="card-img-top" alt="Jugador 3">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-success">Luis Fernández</h6>
+                                            <p class="card-text">Edad: 11 años<br>Curso: 5º Primaria<br>Posición: Defensa</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Jugador 4 -->
+                                <div class="col-12 player-cardJugadores w-75">
+                                    <div class="card border-success">
+                                        <img src="IMG/niños/niño4.jpg" class="card-img-top" alt="Jugador 4">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-success">Miguel Torres</h6>
+                                            <p class="card-text">Edad: 10 años<br>Curso: 4º Primaria<br>Posición: Portero</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Jugador 5 -->
+                                <div class="col-12 player-cardJugadores w-75">
+                                    <div class="card border-success">
+                                        <img src="IMG/niños/niño5.jpg" class="card-img-top" alt="Jugador 5">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-success">Antonio Ruiz</h6>
+                                            <p class="card-text">Edad: 12 años<br>Curso: 6º Primaria<br>Posición: Delantero</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Jugador 6 -->
+                                <div class="col-12 player-cardJugadores w-75">
+                                    <div class="card border-success">
+                                        <img src="IMG/niños/niño6.jpg" class="card-img-top" alt="Jugador 6">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-success">David López</h6>
+                                            <p class="card-text">Edad: 11 años<br>Curso: 5º Primaria<br>Posición: Mediocampista</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Jugador 7 -->
+                                <div class="col-12 player-cardJugadores w-75 h-auto">
+                                    <div class="card border-success">
+                                        <img src="IMG/niños/niño7.jpg" class="card-img-top" alt="Jugador 7">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-success">Javier Sánchez</h6>
+                                            <p class="card-text">Edad: 10 años<br>Curso: 4º Primaria<br>Posición: Defensa</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Jugador 8 -->
+                                <div class="col-12 player-cardJugadores w-75 h-auto">
+                                    <div class="card border-success">
+                                        <img src="IMG/niños/niño8.jpg" class="card-img-top" alt="Jugador 8">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-success">Pedro Ramírez</h6>
+                                            <p class="card-text">Edad: 9 años<br>Curso: 3º Primaria<br>Posición: Portero</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Equipo 2 -->
+            <div class="col-md-4 team-cardJugadores">
+                <div class="card border-success">
+                    <div class="card-body">
+                        <h5 class="card-title text-success">Los Rápidos del Barrio</h5>
+                        <div class="team-scrollable-containerJugadores"> <!-- Contenedor con barra de desplazamiento -->
+                            <div class="row">
+                                <!-- Jugador 1 -->
+                                <div class="col-12 player-cardJugadores w-75">
+                                    <div class="card border-success">
+                                        <img src="IMG/niños/niño6.jpg" class="card-img-top w-100 " alt="Jugador 1">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-success">Juan Pérez</h6>
+                                            <p class="card-text">Edad: 10 años<br>Curso: 4º Primaria<br>Posición: Delantero</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Jugador 2 -->
+                                <div class="col-12 player-cardJugadores w-75">
+                                    <div class="card border-success">
+                                        <img src="IMG/niños/niño7.jpg" class="card-img-top" alt="Jugador 2">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-success">Carlos Gómez</h6>
+                                            <p class="card-text">Edad: 9 años<br>Curso: 3º Primaria<br>Posición: Mediocampista</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Jugador 3 -->
+                                <div class="col-12 player-cardJugadores w-75">
+                                    <div class="card border-success">
+                                        <img src="IMG/niños/niño8.jpg" class="card-img-top" alt="Jugador 3">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-success">Luis Fernández</h6>
+                                            <p class="card-text">Edad: 11 años<br>Curso: 5º Primaria<br>Posición: Defensa</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Jugador 4 -->
+                                <div class="col-12 player-cardJugadores w-75">
+                                    <div class="card border-success">
+                                        <img src="IMG/niños/niño5.jpg" class="card-img-top" alt="Jugador 4">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-success">Miguel Torres</h6>
+                                            <p class="card-text">Edad: 10 años<br>Curso: 4º Primaria<br>Posición: Portero</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Jugador 5 -->
+                                <div class="col-12 player-cardJugadores w-75">
+                                    <div class="card border-success">
+                                        <img src="IMG/niños/niño4.jpg" class="card-img-top" alt="Jugador 5">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-success">Antonio Ruiz</h6>
+                                            <p class="card-text">Edad: 12 años<br>Curso: 6º Primaria<br>Posición: Delantero</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Jugador 6 -->
+                                <div class="col-12 player-cardJugadores w-75">
+                                    <div class="card border-success">
+                                        <img src="IMG/niños/niño3.jpg" class="card-img-top" alt="Jugador 6">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-success">David López</h6>
+                                            <p class="card-text">Edad: 11 años<br>Curso: 5º Primaria<br>Posición: Mediocampista</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Jugador 7 -->
+                                <div class="col-12 player-cardJugadores w-75 h-auto">
+                                    <div class="card border-success">
+                                        <img src="IMG/niños/niño2.jpg" class="card-img-top" alt="Jugador 7">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-success">Javier Sánchez</h6>
+                                            <p class="card-text">Edad: 10 años<br>Curso: 4º Primaria<br>Posición: Defensa</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Jugador 8 -->
+                                <div class="col-12 player-cardJugadores w-75 h-auto">
+                                    <div class="card border-success">
+                                        <img src="IMG/niños/niño1.jpg" class="card-img-top" alt="Jugador 8">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-success">Pedro Ramírez</h6>
+                                            <p class="card-text">Edad: 9 años<br>Curso: 3º Primaria<br>Posición: Portero</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Equipo 3 -->
+            <div class="col-md-4 team-cardJugadores">
+                <div class="card border-success">
+                    <div class="card-body">
+                        <h5 class="card-title text-success">Los Futbolistas Estrella</h5>
+                        <div class="team-scrollable-containerJugadores"> <!-- Contenedor con barra de desplazamiento -->
+                            <div class="row">
+                                <!-- Jugador 1 -->
+                                <div class="col-12 player-cardJugadores w-75">
+                                    <div class="card border-success">
+                                        <img src="IMG/niños/niño8.jpg" class="card-img-top w-100 " alt="Jugador 1">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-success">Juan Pérez</h6>
+                                            <p class="card-text">Edad: 10 años<br>Curso: 4º Primaria<br>Posición: Delantero</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Jugador 2 -->
+                                <div class="col-12 player-cardJugadores w-75">
+                                    <div class="card border-success">
+                                        <img src="IMG/niños/niño7.jpg" class="card-img-top" alt="Jugador 2">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-success">Carlos Gómez</h6>
+                                            <p class="card-text">Edad: 9 años<br>Curso: 3º Primaria<br>Posición: Mediocampista</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Jugador 3 -->
+                                <div class="col-12 player-cardJugadores w-75">
+                                    <div class="card border-success">
+                                        <img src="IMG/niños/niño6.jpg" class="card-img-top" alt="Jugador 3">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-success">Luis Fernández</h6>
+                                            <p class="card-text">Edad: 11 años<br>Curso: 5º Primaria<br>Posición: Defensa</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Jugador 4 -->
+                                <div class="col-12 player-cardJugadores w-75">
+                                    <div class="card border-success">
+                                        <img src="IMG/niños/niño5.jpg" class="card-img-top" alt="Jugador 4">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-success">Miguel Torres</h6>
+                                            <p class="card-text">Edad: 10 años<br>Curso: 4º Primaria<br>Posición: Portero</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Jugador 5 -->
+                                <div class="col-12 player-cardJugadores w-75">
+                                    <div class="card border-success">
+                                        <img src="IMG/niños/niño1.jpg" class="card-img-top" alt="Jugador 5">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-success">Antonio Ruiz</h6>
+                                            <p class="card-text">Edad: 12 años<br>Curso: 6º Primaria<br>Posición: Delantero</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Jugador 6 -->
+                                <div class="col-12 player-cardJugadores w-75">
+                                    <div class="card border-success">
+                                        <img src="IMG/niños/niño2.jpg" class="card-img-top" alt="Jugador 6">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-success">David López</h6>
+                                            <p class="card-text">Edad: 11 años<br>Curso: 5º Primaria<br>Posición: Mediocampista</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Jugador 7 -->
+                                <div class="col-12 player-cardJugadores w-75 h-auto">
+                                    <div class="card border-success">
+                                        <img src="IMG/niños/niño3.jpg" class="card-img-top" alt="Jugador 7">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-success">Javier Sánchez</h6>
+                                            <p class="card-text">Edad: 10 años<br>Curso: 4º Primaria<br>Posición: Defensa</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Jugador 8 -->
+                                <div class="col-12 player-cardJugadores w-75 h-auto">
+                                    <div class="card border-success">
+                                        <img src="IMG/niños/niño4.jpg" class="card-img-top" alt="Jugador 8">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-success">Pedro Ramírez</h6>
+                                            <p class="card-text">Edad: 9 años<br>Curso: 3º Primaria<br>Posición: Portero</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container" id="patrocinadores">
+            <h4 class="fw-bold">¡Agradecimiento especial a nuestros patrocinadores!</h4>
+            <p class="mb-4">Agradecemos el apoyo de las siguientes marcas locales que hacen posible esta liga.</p>
+            
+            <div class="row justify-content-center">
+                <!-- Patrocinador 1 -->
+                <div class="col-6 col-md-3 mb-3">
+                    <img src="IMG/COLABORAN DIEGO 1.jpg" class="img-fluid rounded" alt="Patrocinador 1">
+                    <p class="mt-2">Pasteleria Diego Vazquez</p>
+                </div>
+                <!-- Patrocinador 2 -->
+                <div class="col-6 col-md-3 mb-3">
+                    <img src="IMG/juntaAndaluza.png" class="img-fluid rounded" alt="Patrocinador 2">
+                    <p class="mt-2">Junta Andalucia</p>
+                </div>
+                <!-- Patrocinador 3 -->
+                <div class="col-6 col-md-3 mb-3">
+                    <img src="IMG/ORGANIZAN AYTO 1.jpeg" class="img-fluid rounded" alt="Patrocinador 3">
+                    <p class="mt-2">Ayuntamiento de Utrera</p>
+                </div>
+            </div>
+
+            <p class="mt-4">© 2025 Liga de Fútbol | Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script>
+        // Función para filtrar equipos por nombre
+        function filterTeamsJugadores() {
+            const input = document.getElementById("searchInputJugadores").value.toLowerCase();
+            const teams = document.querySelectorAll(".team-cardJugadores");
+
+            teams.forEach(team => {
+                const teamName = team.querySelector(".card-title").textContent.toLowerCase();
+                if (teamName.includes(input)) {
+                    team.style.display = "block";
+                } else {
+                    team.style.display = "none";
+                }
+            });
+        }
+
+        // Funciones para el menú lateral
+        function openSidebarJugadores() {
+            document.getElementById("sidebarJugadores").style.left = "0";
+        }
+
+        function closeSidebarJugadores() {
+            document.getElementById("sidebarJugadores").style.left = "-250px";
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
