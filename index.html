@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Liga de Fútbol</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="paginas/IMG/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/main.css">
+</head>
+<!--Fondo-->
+<body class="bg-image" style="background-image: url('paginas/IMG/'); height: 100vh; background-size: cover;">
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success py-4">
+        <div class="container">
+            <a class="navbar-brand" href="#" onclick="openSidebar()">Liga de Fútbol</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="paginas/equipos.html">Equipos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="paginas/registro.html">Registro</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menú lateral -->
+    <div id="sidebar" class="sidebar">
+        <span class="close-btn" onclick="closeSidebar()">×</span>
+        <a href="#carrusel">Carrusel</a>
+        <a href="#informacion">Información</a>
+        <a href="#premios">Premios</a>
+        <a href="#patrocinadores">Patrocinadores</a>
+    </div>
+
+    <div class="container mt-4">
+        <img src="paginas/IMG/logo.png" alt="Logo de la Liga" class="img-fluid mx-auto d-block" style="max-width: 200px;">
+    
+    </div>
+
+    <!-- Carrusel -->
+    <div id="carrusel" class="container mt-3">
+        <div class="container text-center my-5">
+            <div class="p-3" style="background-color: #1b7d38e3; border: 2px solid white;">
+                <h2 class="text-light text-uppercase fw-bold">Imágenes de nuestros Equipos</h2>
+            </div>
+        
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="paginas/IMG/foto1.jpg" class="d-block w-100 mx-auto" alt="Imagen 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="paginas/IMG/foto2.jpg" class="d-block w-100 mx-auto" alt="Imagen 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="paginas/IMG/foto3.jpg" class="d-block w-100 mx-auto" alt="Imagen 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="paginas/IMG/foto4.jpg" class="d-block w-100 mx-auto" alt="Imagen 4">
+                </div>
+                
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+    </div>
+
+    <!-- Información -->
+<div id="informacion" class="container mt-5">
+    <div class="card shadow-lg border-0">
+        <div class="card-body">
+            <h2 class="text-success border-bottom pb-2">
+                <i class="bi bi-info-circle"></i> Información de la Liga
+            </h2>
+            <p class="mt-3 text-muted">
+                La Liga de Fútbol del instituto es un torneo en el que equipos de diferentes categorías compiten 
+                para demostrar su talento y espíritu deportivo. Aquí encontrarás toda la información sobre la liga, 
+                incluyendo el reglamento, los equipos participantes, el calendario de partidos y las últimas novedades.
+            </p>
+            <p class="text-muted">
+                Además, podrás conocer el sistema de puntuación, los criterios de clasificación y las reglas de juego. 
+                ¡Sigue de cerca cada jornada y mantente informado sobre todo lo que sucede en la liga!
+            </p>
+        </div>
+        <!--accordion -->
+        <div class="accordion mt-5" id="PanelReto"  style="width: 100%;">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button parrafos" type="button" data-bs-toggle="collapse" data-bs-target="#panelReto1" aria-expanded="false" aria-controls="panelReto1">
+                  REGLAMENTO TORNEO
+                </button>
+              </h2>
+              <!-- Panel 1 -->
+              <div id="panelReto1" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <ul>
+                        <li>El torneo se jugará en modalidad de liga, con partidos de ida y vuelta.</li>
+                        <li>Los equipos se enfrentarán en jornadas semanales, de acuerdo al calendario establecido.</li>
+                        <li>Se otorgarán 3 puntos por victoria, 1 punto por empate y 0 puntos por derrota.</li>
+                        <li>Los equipos serán clasificados de acuerdo a su puntuación, diferencia de goles y goles a favor.</li>
+                        <li>Los 4 primeros equipos de cada categoría pasarán a la fase final del torneo.</li>
+                        <li>El equipo campeón de cada categoría será el que obtenga el mayor puntaje en la fase final.</li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Bloque 2 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed parrafos" type="button" data-bs-toggle="collapse" data-bs-target="#panelReto2" aria-expanded="false" aria-controls="panelReto2">
+                  REQUISITOS INDISPENSABLES
+                </button>
+              </h2>
+              <!-- Panel 2 -->
+              <div id="panelReto2" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <ul>
+                        <li>Edad mínima: 12 años.</li>
+                        <li>Equipos de 10 jugadores.</li>
+                        <li>Uniforme completo: camiseta, pantalón, medias y calzado deportivo.</li>
+                        <li>Presentación de documento de identidad y autorización de los padres o tutores.</li>
+                        <li>Abono de la cuota de inscripción y firma del reglamento.</li>
+                        <li>Compromiso de asistencia a los entrenamientos y partidos.</li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Bloque 3 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed parrafos" type="button" data-bs-toggle="collapse" data-bs-target="#panelReto3" aria-expanded="false" aria-controls="panelReto3">
+                  HORARIO DE LOS PARTIDOS
+                </button>
+              </h2>
+              <!-- Panel 3 -->
+              <div id="panelReto3" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <ul>
+                        <li>Los partidos se jugarán los sábados y domingos, en horarios de 8:00 a 12:00 horas.</li>
+                        <li>La duración de los partidos será de 2 tiempos de 30 minutos cada uno, con un descanso de 10 minutos.</li>
+                        <li>Los equipos deberán presentarse 30 minutos antes del inicio del partido para el calentamiento.</li>
+                        <li>El árbitro será el encargado de dirigir el partido y hacer cumplir las reglas de juego.</li>
+                        <li>Se otorgará un premio al equipo ganador y al jugador más destacado de cada partido.</li>
+                    </ul>                    
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    
+</div>
+
+
+    <!-- Premios -->
+<div id="premios" class="container text-center my-5">
+    <div class="p-2" style="background-color: #1b7d38e3; border: 2px solid white;">
+        <h2 class="text-light text-uppercase fw-bold">PREMIOS</h2>
+    </div>
+
+    <div class="row mt-4">
+        <!-- Premio al equipo ganador -->
+        <div class="col-md-4">
+            <div class="card border-0 shadow-lg transition-card">
+                <p></p>
+                <h3 class="card-title fw-bold">🏆 Equipo Campeón</h3>
+                <img src="paginas/IMG/trofeo.png" class="card-img-top" alt="Trofeo equipo ganador">
+                <div class="card-body">
+                    <p class="card-text">El equipo que logre la victoria final recibirá el trofeo de campeón.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Premio al segundo mejor equipo -->
+        <div class="col-md-4">
+            <div class="card border-0 shadow-lg transition-card">
+                <p></p>
+                <h3 class="card-title fw-bold">🥈 Subcampeón</h3>
+                <img src="paginas/IMG/diploma.png" class="card-img-top" alt="Trofeo subcampeón">
+                <div class="card-body">
+                    
+                    <p class="card-text">El equipo que quede en segundo lugar recibirá un reconocimiento especial.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Premio al mayor goleador -->
+        <div class="col-md-4">
+            <div class="card border-0 shadow-lg transition-card">
+                <p></p>
+                <h3 class="card-title fw-bold">⚽ Máximo Goleador</h3>
+                <img src="paginas/IMG/medalla.png" class="card-img-top" alt="Premio al goleador">
+                <div class="card-body">
+                    <p class="card-text">El jugador con más goles en el torneo recibirá una medalla especial.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--FOOTER-->
+<footer class="bg-dark text-white text-center py-4 mt-5">
+    <div class="container" id="patrocinadores">
+        <h4 class="fw-bold">¡Agradecimiento especial a nuestros patrocinadores!</h4>
+        <p class="mb-4">Agradecemos el apoyo de las siguientes marcas locales que hacen posible esta liga.</p>
+        
+        <div class="row justify-content-center">
+            <!-- Patrocinador 1 -->
+            <div class="col-6 col-md-3 mb-3">
+                <img src="paginas/IMG/COLABORAN DIEGO 1.jpg" class="img-fluid rounded" alt="Patrocinador 1">
+                <p class="mt-2">Pasteleria Diego Vazquez</p>
+            </div>
+            <!-- Patrocinador 2 -->
+            <div class="col-6 col-md-3 mb-3">
+                <img src="paginas/IMG/juntaAndaluza.png" class="img-fluid rounded" alt="Patrocinador 2">
+                <p class="mt-2">Junta Andalucia</p>
+            </div>
+            <!-- Patrocinador 3 -->
+            <div class="col-6 col-md-3 mb-3">
+                <img src="paginas/IMG/ORGANIZAN AYTO 1.jpeg" class="img-fluid rounded" alt="Patrocinador 3">
+                <p class="mt-2">Ayuntamiento de Utrera</p>
+            </div>
+        </div>
+
+        <p class="mt-4">© 2025 Liga de Fútbol | Todos los derechos reservados</p>
+    </div>
+</footer>
+
+    <script>
+        function openSidebar() {
+            document.getElementById("sidebar").style.left = "0";
+        }
+
+        function closeSidebar() {
+            document.getElementById("sidebar").style.left = "-250px";
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

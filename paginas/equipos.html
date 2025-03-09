@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Equipos - Liga de Fútbol</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="IMG/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/main.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success py-4">
+        <div class="container">
+            <a class="navbar-brand" href="#" onclick="openSidebar()">Liga de Fútbol</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="equipos.html">Equipos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="registro.html">Registro de Jugadores</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--Menu Lateral-->
+    <div id="sidebar" class="sidebar">
+        <span class="close-btn" onclick="closeSidebar()">×</span>
+        <a href="#equipos">Equipos</a>
+        <a href="#patrocinadores">Patrocinadores</a>
+    </div>
+
+    <div class="container mt-4">
+        <img src="IMG/logo.png" alt="Logo de la Liga" class="img-fluid mx-auto d-block" style="max-width: 200px;">
+    
+    </div>
+    
+    <div class="container text-center my-5" id="equipos">
+        <div class="p-2" style="background-color: #1b7d38e3; border: 2px solid white;">
+            <h2 class="text-light text-uppercase fw-bold">EQUIPOS PARTICIPANTES</h2>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="IMG/e1.jpg" class="card-img-top" alt="Equipo 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Los Pequeños Guerreros</h5>
+                        <p class="card-text">Un equipo infantil con gran espíritu de lucha y trabajo en equipo. Siempre muestran su pasión por el fútbol en cada partido.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <a href="jugadores.html">
+                                    <button class="btn btn-sm btn-outline-primary">Ver</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="IMG/e2.jpg" class="card-img-top" alt="Equipo 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Los Rápidos del Barrio</h5>
+                        <p class="card-text">Con una velocidad inigualable, este equipo domina el campo con sus pases precisos y jugadas estratégicas.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <a href="jugadores.html">
+                                    <button class="btn btn-sm btn-outline-primary">Ver</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="IMG/e3.jpeg" class="card-img-top" alt="Equipo 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Los Futbolistas Estrella</h5>
+                        <p class="card-text">Siempre buscan la excelencia, destacando por su disciplina y habilidades impresionantes dentro del campo.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <a href="jugadores.html">
+                                    <button class="btn btn-sm btn-outline-primary">Ver</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="IMG/e1.jpg" class="card-img-top" alt="Equipo 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Los Pequeños Guerreros</h5>
+                        <p class="card-text">Un equipo infantil con gran espíritu de lucha y trabajo en equipo. Siempre muestran su pasión por el fútbol en cada partido.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <a href="jugadores.html">
+                                    <button class="btn btn-sm btn-outline-primary">Ver</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="IMG/e2.jpg" class="card-img-top" alt="Equipo 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Los Rápidos del Barrio</h5>
+                        <p class="card-text">Con una velocidad inigualable, este equipo domina el campo con sus pases precisos y jugadas estratégicas.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <a href="jugadores.html">
+                                    <button class="btn btn-sm btn-outline-primary">Ver</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="IMG/e3.jpeg" class="card-img-top" alt="Equipo 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Los Futbolistas Estrella</h5>
+                        <p class="card-text">Siempre buscan la excelencia, destacando por su disciplina y habilidades impresionantes dentro del campo.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <a href="jugadores.html">
+                                    <button class="btn btn-sm btn-outline-primary">Ver</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="IMG/e1.jpg" class="card-img-top" alt="Equipo 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Los Pequeños Guerreros</h5>
+                        <p class="card-text">Un equipo infantil con gran espíritu de lucha y trabajo en equipo. Siempre muestran su pasión por el fútbol en cada partido.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <a href="jugadores.html">
+                                    <button class="btn btn-sm btn-outline-primary">Ver</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="IMG/e2.jpg" class="card-img-top" alt="Equipo 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Los Rápidos del Barrio</h5>
+                        <p class="card-text">Con una velocidad inigualable, este equipo domina el campo con sus pases precisos y jugadas estratégicas.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <a href="jugadores.html">
+                                    <button class="btn btn-sm btn-outline-primary">Ver</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="IMG/e3.jpeg" class="card-img-top" alt="Equipo 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Los Futbolistas Estrella</h5>
+                        <p class="card-text">Siempre buscan la excelencia, destacando por su disciplina y habilidades impresionantes dentro del campo.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <a href="jugadores.html">
+                                    <button class="btn btn-sm btn-outline-primary">Ver</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--FOOTER-->
+<footer class="bg-dark text-white text-center py-4 mt-5">
+    <div class="container" id="patrocinadores">
+        <h4 class="fw-bold">¡Agradecimiento especial a nuestros patrocinadores!</h4>
+        <p class="mb-4">Agradecemos el apoyo de las siguientes marcas locales que hacen posible esta liga.</p>
+        
+        <div class="row justify-content-center">
+            <!-- Patrocinador 1 -->
+            <div class="col-6 col-md-3 mb-3">
+                <img src="IMG/COLABORAN DIEGO 1.jpg" class="img-fluid rounded" alt="Patrocinador 1">
+                <p class="mt-2">Pasteleria Diego Vazquez</p>
+            </div>
+            <!-- Patrocinador 2 -->
+            <div class="col-6 col-md-3 mb-3">
+                <img src="IMG/juntaAndaluza.png" class="img-fluid rounded" alt="Patrocinador 2">
+                <p class="mt-2">Junta Andalucia</p>
+            </div>
+            <!-- Patrocinador 3 -->
+            <div class="col-6 col-md-3 mb-3">
+                <img src="IMG/ORGANIZAN AYTO 1.jpeg" class="img-fluid rounded" alt="Patrocinador 3">
+                <p class="mt-2">Ayuntamiento de Utrera</p>
+            </div>
+        </div>
+
+        <p class="mt-4">© 2025 Liga de Fútbol | Todos los derechos reservados</p>
+    </div>
+</footer>
+<script>
+    function openSidebar() {
+        document.getElementById("sidebar").style.left = "0";
+    }
+
+    function closeSidebar() {
+        document.getElementById("sidebar").style.left = "-250px";
+    }
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+// Importar base
+@import 'base/variables';
+@import 'base/reset';
+@import 'base/mixins';
+
+// Importar componentes
+@import 'components/buttons';
+@import 'components/cards';
+@import 'components/sidebar';
+
+// Importar layout
+@import 'layout/header';
+@import 'layout/footer';
+
+// Importar páginas
+@import 'pages/home';
